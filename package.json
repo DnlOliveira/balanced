@@ -1,0 +1,27 @@
+{
+  "name": "balanced",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cleanup": "rm build/index.html build/bundle.js build/App.js",
+    "babel:build": "babel views/js -d build",
+    "browserify:build": "browserify build/App.js > build/bundle.js",
+    "move:index": "cp views/index.html build",
+    "build": "npm run babel:build && npm run browserify:build && npm run move:index",
+    "dev": "npm run cleanup && npm run babel:build && npm run browserify:build && npm run move:index && go run main.go"
+  },
+  "author": "Daniel Oliveira",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "browserify": "^16.2.2"
+  },
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}
