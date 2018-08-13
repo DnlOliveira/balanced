@@ -1,10 +1,14 @@
 
-npm install
+### Pre-req
+`npm install`
 
-## Dev 
-npm run dev
+### Dev 
+`npm run dev`
 
-## Deploy
+### Deploy
+```
 npm run cleanup (if previously deployed)
 npm run build
-go run main.go
+nohup ./balanced &
+kill pid
+```
